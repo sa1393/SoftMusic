@@ -4,7 +4,11 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    color: white;
+}
 
+.root {
+    font-size: 18px;
 }
 
 .default-link{

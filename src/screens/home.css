@@ -1,2 +1,15 @@
 .home {
+      
 }
+
+.home-container{
+    width: 700px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.suggest-artist {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
