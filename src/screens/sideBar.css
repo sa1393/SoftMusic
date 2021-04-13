@@ -3,6 +3,10 @@
     border-right: 1px solid rgba(187, 184, 184, 0.21);
     height: 100%;
     border-top-left-radius: 12px;
+<<<<<<< HEAD
+=======
+    font-size: 18px;
+>>>>>>> 95beb86c2c20365b9fad6d04fd49abf8e2d06179
 }
 
 .title {
@@ -42,7 +46,12 @@
     font-size: 1.2rem;
 }
 
+<<<<<<< HEAD
 .playList {
     margin-left: 20px;
     margin-top: 20px;
+=======
+.playList-btn {
+    border-radius: 18px;
+>>>>>>> 95beb86c2c20365b9fad6d04fd49abf8e2d06179
 }

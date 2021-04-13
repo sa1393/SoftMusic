@@ -5,14 +5,19 @@
     position: absolute;
     border-bottom-left-radius : 12px;
     border-bottom-right-radius : 12px;
+<<<<<<< HEAD
     display: grid;
     grid-template-columns: 200px 780px 300px;
+=======
+
+>>>>>>> 95beb86c2c20365b9fad6d04fd49abf8e2d06179
 }
 
 .music_front_bar{
     background: rgb(89,93,169);
     background: linear-gradient(90deg, rgba(89,93,169,1) 0%, rgba(67,70,123,1) 17%, rgba(93,94,174,1) 43%, rgba(71,73,130,1) 69%, rgba(93,94,174,1) 100%);
 }
+<<<<<<< HEAD
 
 .music-info {
     width: 180px;
@@ -68,3 +73,5 @@
 }
 
 
+=======
+>>>>>>> 95beb86c2c20365b9fad6d04fd49abf8e2d06179

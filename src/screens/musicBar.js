@@ -1,13 +1,20 @@
 import React from 'react';
 import './musicBar.css';
 
+<<<<<<< HEAD
 import {PlayCircleOutline, SkipPrevious, SkipNext} from '@material-ui/icons';
 
+=======
+import {Howl, Howler} from 'howler';
+
+ 
+>>>>>>> 95beb86c2c20365b9fad6d04fd49abf8e2d06179
 
 class MusicBar extends React.Component {
     render() {
         return (
             <div className="music_front_bar">
+<<<<<<< HEAD
                 <div className="music-info">
                     <div className="music-img-space">
                         <div className="music-img">
@@ -35,6 +42,8 @@ class MusicBar extends React.Component {
                 </div>
 
                 
+=======
+>>>>>>> 95beb86c2c20365b9fad6d04fd49abf8e2d06179
             </div>
         )
     }

@@ -8,8 +8,13 @@
 }
 
 .music-app {
+<<<<<<< HEAD
     width: 1280px;
     height: 810px;
+=======
+    width: 1065px;
+    height: 675px;
+>>>>>>> 95beb86c2c20365b9fad6d04fd49abf8e2d06179
     background-color: black;
     border-radius: 12px;
     position: relative;
@@ -24,7 +29,11 @@
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     display: grid;
+<<<<<<< HEAD
     grid-template-columns: 250px 1030px;
+=======
+    grid-template-columns: 210px 855px;
+>>>>>>> 95beb86c2c20365b9fad6d04fd49abf8e2d06179
     
 }
 
