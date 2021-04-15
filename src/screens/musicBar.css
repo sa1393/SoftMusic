@@ -5,19 +5,14 @@
     position: absolute;
     border-bottom-left-radius : 12px;
     border-bottom-right-radius : 12px;
-<<<<<<< HEAD
     display: grid;
     grid-template-columns: 200px 780px 300px;
-=======
-
->>>>>>> 95beb86c2c20365b9fad6d04fd49abf8e2d06179
 }
 
 .music_front_bar{
     background: rgb(89,93,169);
     background: linear-gradient(90deg, rgba(89,93,169,1) 0%, rgba(67,70,123,1) 17%, rgba(93,94,174,1) 43%, rgba(71,73,130,1) 69%, rgba(93,94,174,1) 100%);
 }
-<<<<<<< HEAD
 
 .music-info {
     width: 180px;
@@ -72,6 +67,48 @@
     margin: 5px;
 }
 
+input[type=range]{
+    -webkit-appearance: none;
+}
 
-=======
->>>>>>> 95beb86c2c20365b9fad6d04fd49abf8e2d06179
+input[type=range]:focus {
+    outline: none;
+}
+
+.seek-slider {
+    width: 300px;;
+    background: #d5d4d3; 
+
+}
+
+.seek-slider::-webkit-slider-runnable-track {
+    height: .25em;
+    background-color: white;
+    
+}
+
+.seek-slider {
+    -webkit-appearance: none; 
+    width: 100%; 
+    height: 6px;
+    cursor: pointer;
+    border-radius: 0; /* iOS */
+  }
+
+
+.seek-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    box-shadow: 0px 0px 1px 4px #474a83;
+    margin-top: -5px;
+}
+
+
+
+
+

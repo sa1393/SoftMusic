@@ -1,20 +1,22 @@
 import React from 'react';
 import './musicBar.css';
 
-<<<<<<< HEAD
 import {PlayCircleOutline, SkipPrevious, SkipNext} from '@material-ui/icons';
+function MusicPlay(){
+    console.log("??")
 
-=======
-import {Howl, Howler} from 'howler';
+    let audioFile = new Audio('../../resource/music1.mp3');
+    console.log(audioFile);
+    audioFile.play().catch(error => {
+        //  when an exception is played, the exception flow is followed 
+    });
+}
 
- 
->>>>>>> 95beb86c2c20365b9fad6d04fd49abf8e2d06179
 
 class MusicBar extends React.Component {
     render() {
         return (
             <div className="music_front_bar">
-<<<<<<< HEAD
                 <div className="music-info">
                     <div className="music-img-space">
                         <div className="music-img">
@@ -26,14 +28,22 @@ class MusicBar extends React.Component {
                         <span>가수</span>
                         
                     </div>
-                </div>
+                </div>  
                 <div className="music-play-container">
+                    <audio className="music-play">
+
+                    </audio>
                     <SkipPrevious className="icon"></SkipPrevious>
-                    <PlayCircleOutline fontSize="large" color="primary" className="player-icon icon"></PlayCircleOutline>
+
+                    <button onClick={MusicPlay}>
+                    <PlayCircleOutline fontSize="large" color="primary" className="player-icon icon" ></PlayCircleOutline> 
+                    </button>
+                   
+      
                     <SkipNext className="icon"></SkipNext>
 
-                    <input type="range" id="seek-slider" max="100" value="0"></input>
-                    <input type="range" id="volume-slider" max="100" value="0"></input>
+                    <input type="range" className="seek-slider" max="100" ></input>
+                    <input type="range" className="volume-slider" max="100" ></input>
 
                 </div>
                 <div className="music-system">
@@ -42,8 +52,6 @@ class MusicBar extends React.Component {
                 </div>
 
                 
-=======
->>>>>>> 95beb86c2c20365b9fad6d04fd49abf8e2d06179
             </div>
         )
     }
