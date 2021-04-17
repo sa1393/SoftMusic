@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import './reset.css';
 import './app.css'
-import Home from './screens/home.js';
-import musicSearch from './screens/musicSearch.js';
-import SideBar from './screens/sideBar.js';
-import MusicBar from './screens/musicBar.js';
+import Home from './component/home.js';
+import musicSearch from './component/musicSearch.js';
+import SideBar from './component/sideBar.js';
+import MusicBar from './component/musicBar.js';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
