@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-import './reset.css';
-import './app.css'
+import './css/reset.css';
+import './css/app.css'
 import Home from './component/home.js';
 import musicSearch from './component/musicSearch.js';
 import SideBar from './component/sideBar.js';
@@ -15,30 +15,25 @@ const styles = theme => ({
 
 
 
-class App extends React.Component {
-    componentDidMount(){
-        fetch('/');
-    }
-    
-    render(){
-        return (
-            <Router>
-                <div className="wrapper">
-                    <div className="music-app">
-                        <div className="music-content">
-                            <SideBar></SideBar> 
-                            <Route path="/" exact component={Home}></Route>
-                            <Route path="/search" component={musicSearch}></Route>
-                            
-                        </div>
-                        <MusicBar></MusicBar>
-
+let App = ()=> {
+    document.title = `haha`;
+    return (
+        <Router>
+            <div className="wrapper">
+                <div className="music-app">
+                    <div className="music-content">
+                        <SideBar></SideBar> 
+                        <Route path="/" exact component={Home}></Route>
+                        <Route path="/search" component={musicSearch}></Route>
+                        
                     </div>
+                    <MusicBar></MusicBar>
 
                 </div>
-            </Router>
-        )
-    }
+
+            </div>
+        </Router>
+    )
 }
 
 export default withStyles(styles)(App);

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "node app.js",
-    "front": "cd client && npm start"
+    "front": "cd client && npm start",
+    "dev" : "npm run front && npm run server"
   },
   "repository": {
     "type": "git",

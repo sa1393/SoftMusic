@@ -1,17 +1,15 @@
 import React from "react";
+import "../css/musicSearch.css";
 
+let MusicSearch = ()=>{
 
-class musicSearch extends React.Component{
-
-    render(){
-        return(
-            <div className="search">
-                <h1>
-                    hahah
-                </h1>
-            </div>
-        )
-    }
+    return(
+        <div className="search">
+            <h1>
+                hahah
+            </h1>
+        </div>
+    )
 }
 
-export default musicSearch;
+export default MusicSearch;
