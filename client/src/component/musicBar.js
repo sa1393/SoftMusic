@@ -3,24 +3,7 @@ import '../css/musicBar.css';
 
 import { PlayCircleOutline, PauseCircleOutline, SkipPrevious, SkipNext, VolumeUp, VolumeDown, VolumeMute, VolumeOff } from '@material-ui/icons';
 
-const useFadeIn = (duration = 2, delay = 0) => {
-    const element = useRef();
-
-    useEffect(() => {
-        if (element) {
-            const { current } = element;
-            current.style.transition = `opacity ${duration}s ease-in-out ${delay}s`;
-            current.style.opacity = 1;
-        }
-    }, []);
-
-    if (typeof duration !== "number" || typeof delay !== "number") {
-        return;
-    }
-
-    return { ref: element, style: { opacity: 1 } };
-
-}
+import useFade from '../hook/useFade';
 
 //음악
 const useAudio = (src)=> {
@@ -75,7 +58,6 @@ let MusicBar = () => {
     const {play, setState, audio, musicInput} = useAudio("music/music.mp3");
     const {soundInput} = useSound();
 
-
     function soundControl(){
         audio.current.volume = soundInput.current.value / 100;
     }
@@ -84,6 +66,7 @@ let MusicBar = () => {
         audio.current.currentTime = musicInput.current.value * audio.current.duration / 10000;
     }
 
+    const fadeSound = useFade(0.2, 0);
 
     return (
         <div className="music_front_bar">
@@ -114,9 +97,17 @@ let MusicBar = () => {
                 <input ref={musicInput} type="range" className="seek-slider" max="10000" onChange={musicSkip}></input>
             </div>
             <div className="music-system">
-                <div className="sound-player" onMouseOver={(event) =>{}}>
+                <div className="sound-player" onMouseEnter={(event) =>{
+                    fadeSound.ref.current.style.opacity = 1;
+                }}
+                onMouseLeave={(event) => {
+                    fadeSound.ref.current.style.opacity = 0;
+                }}
+                >
                     <VolumeUp className="icon" ></VolumeUp>
-                    <input ref={soundInput} orien type="range" className="volume-slider" max="100" onChange={soundControl}></input>
+                    <div className="volume-box" ref={fadeSound.ref} style={{opacity : 0}}>
+                        <input ref={soundInput} type="range" className="volume-slider" max="100" onChange={soundControl} ></input>
+                    </div>
                 </div>
             </div>
         </div>
