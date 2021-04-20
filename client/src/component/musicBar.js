@@ -3,35 +3,87 @@ import '../css/musicBar.css';
 
 import { PlayCircleOutline, PauseCircleOutline, SkipPrevious, SkipNext, VolumeUp, VolumeDown, VolumeMute, VolumeOff } from '@material-ui/icons';
 
-let MusicBar = () => {
-    const [play, setPlay] = useState(false);
-
-    const audio = useRef(null);
-    const musicInput = useRef(null);
-    const soundInput = useRef(null);
+const useFadeIn = (duration = 2, delay = 0) => {
+    const element = useRef();
 
     useEffect(() => {
-        audio.current.src = "music/music.mp3";
-        setInterval(() => {
-            musicInput.current.value = audio.current.currentTime / audio.current.duration * 10000;
-        }, 10);
+        if (element) {
+            const { current } = element;
+            current.style.transition = `opacity ${duration}s ease-in-out ${delay}s`;
+            current.style.opacity = 1;
+        }
+    }, []);
 
-    }, [audio]);
-
-
-    function musicPlayAndStop() {
-        play ? audio.current.pause() : audio.current.play();
-
-        setPlay(!play);
-    };
-
-    function musicSkip() {
-        audio.current.currentTime = musicInput.current.value * audio.current.duration / 10000;
+    if (typeof duration !== "number" || typeof delay !== "number") {
+        return;
     }
+
+    return { ref: element, style: { opacity: 1 } };
+
+}
+
+//음악
+const useAudio = (src)=> {
+    const [state, setState] = useState({
+        play: false,
+        src,
+    })
+    const audio = useRef();
+    const musicInput = useRef();
+
+    function updateInput(){
+        musicInput.current.value = audio.current.currentTime / audio.current.duration * 10000;
+    }
+
+    useEffect(()=>{
+        audio.current.src = state.src;
+        setInterval(updateInput);
+
+        return (clearInterval(updateInput));    
+    }, []);
+
+    useEffect(()=> {
+        if(audio.current.src !== null){
+            state.play ? audio.current.play() : audio.current.pause();
+        }
+        
+    }, [state.play]);
+
+    useEffect(()=> {
+        if(audio.current){
+        }
+    }, [musicInput]);
+
+    if(src === null) return;
+
+    return {...state, setState, audio, musicInput};
+}
+
+const useSound = ()=>{
+    const soundInput = useRef();
+
+    useEffect(()=> {
+        
+    }, []); 
+
+
+    return {soundInput};
+}
+
+
+let MusicBar = () => {
+    const {play, setState, audio, musicInput} = useAudio("music/music.mp3");
+    const {soundInput} = useSound();
+
 
     function soundControl(){
         audio.current.volume = soundInput.current.value / 100;
     }
+
+    function musicSkip(){
+        audio.current.currentTime = musicInput.current.value * audio.current.duration / 10000;
+    }
+
 
     return (
         <div className="music_front_bar">
@@ -48,22 +100,23 @@ let MusicBar = () => {
             </div>
             <div className="music-play-container">
                 <audio className="music-play" ref={audio}>
-
+                
+                    
                 </audio>
-                <SkipPrevious className="icon"></SkipPrevious>
+                <SkipPrevious className="icon" ></SkipPrevious>
                 {
                     play ?
-                        <PauseCircleOutline onClick={musicPlayAndStop} fontSize="large" className="player-icon icon"></PauseCircleOutline> :
-                        <PlayCircleOutline onClick={musicPlayAndStop} fontSize="large" color="primary" className="player-icon icon" ></PlayCircleOutline>
+                        <PauseCircleOutline onClick={()=>setState({play:false})} fontSize="large" className="player-icon icon"></PauseCircleOutline> :
+                        <PlayCircleOutline onClick={()=>setState({play:true})} fontSize="large" color="primary" className="player-icon icon" ></PlayCircleOutline>
                 }
                 <SkipNext className="icon"></SkipNext>
 
                 <input ref={musicInput} type="range" className="seek-slider" max="10000" onChange={musicSkip}></input>
             </div>
             <div className="music-system">
-                <div className="sound-player">
-                    <VolumeUp className="icon"></VolumeUp>
-                    <input ref={soundInput} type="range" className="volume-slider" max="100" onChange={soundControl}></input>
+                <div className="sound-player" onMouseOver={(event) =>{}}>
+                    <VolumeUp className="icon" ></VolumeUp>
+                    <input ref={soundInput} orien type="range" className="volume-slider" max="100" onChange={soundControl}></input>
                 </div>
             </div>
         </div>
