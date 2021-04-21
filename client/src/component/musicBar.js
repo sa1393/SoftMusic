@@ -89,17 +89,11 @@ let MusicBar = () => {
     const {soundInput} = useSound();
 
     function soundControl(){
-        if(audio.src){
-            audio.current.volume = soundInput.current.value / 100;
-
-        }
+        audio.current.volume = soundInput.current.value / 100;
     }
 
     function musicSkip(){
-        if(audio.src){
-            audio.current.currentTime = musicInput.current.value * audio.current.duration / 10000;
-
-        }
+        audio.current.currentTime = musicInput.current.value * audio.current.duration / 10000;
     }
 
     const fadeSound = useFade(0.2, 0);
