@@ -1,3 +1,13 @@
+@font-face {
+    src: url("../font/Ossem-Rounded.otf");
+    font-family: "eng-font";
+}
+@font-face {
+    src: url("../font/NanumBarunpenR.ttf");
+    font-family: "kor-font";
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +15,9 @@
     list-style: none;
     text-decoration: none;
     color: white;
+    font-family: "kor-font";
+    font-weight: bold;
+    
 }
 
 .root {

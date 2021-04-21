@@ -62,7 +62,6 @@
     height: 100%;
     display: flex;
     align-items: center;
-    position: relative;
 }
 
 .icon {
@@ -93,6 +92,7 @@ input[type=range]:focus {
     height: 6px;
     cursor: pointer;
     border-radius: 0; /* iOS */
+    
   }
 
 
@@ -110,29 +110,34 @@ input[type=range]:focus {
 /* .volume-slider[type=range]::-webkit-slider-thumb { -webkit-appearance: none; } */
 
 .sound-player {
-    width: 160px;
-    height: 50%;
+    width: 40px;
+    height: 40px;
+    position: relative;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    
 }
 
 .volume-box {
+    transform: rotate(270deg);
+    position: absolute;
+    bottom: 80px;
+    height: 40px;
+    width: 140px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
 }
 
 .volume-slider {
-    -webkit-appearance: none; 
     cursor: pointer;
-    width: 70%;
+    width: 100px;
     background: white; 
+    height: 6px;
 }
 
 .volume-slider::-webkit-slider-runnable-track {
-    height:  6px;
+    height: 6px;
 }
 
 .volume-slider::-webkit-slider-thumb {
@@ -146,4 +151,6 @@ input[type=range]:focus {
     margin-top: -3px;
 }
 
-
+.music-time > span{
+    width: 45px;
+}

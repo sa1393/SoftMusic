@@ -20,7 +20,7 @@ let SideBar = ()=>{
     return(
         <div className="side">
             <div className="title">
-                <span>BROWSE MUSIC</span>
+                <span>SOFT MUSIC</span>
             </div>
             <ul className="menu">
                 <li>
