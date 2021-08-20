@@ -7,6 +7,7 @@ import Home from './component/home.js';
 import musicSearch from './component/musicSearch.js';
 import SideBar from './component/sideBar.js';
 import MusicBar from './component/musicBar.js';
+import musicCharts from './component/musicCharts.js';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -25,6 +26,7 @@ let App = ()=> {
                         <SideBar></SideBar> 
                         <Route path="/" exact component={Home}></Route>
                         <Route path="/search" component={musicSearch}></Route>
+                        <Route path="/charts" component={musicCharts}></Route>
                         
                     </div>
                     <MusicBar></MusicBar>

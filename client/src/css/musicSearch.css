@@ -1,2 +1,29 @@
 .search {
 }
+
+.searchBarArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    
+}
+
+.searchIcon {
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.searchBar {
+    width: 500px;
+    padding: 8px;
+    margin-right: 120px;
+    color: white;
+    background-color: #0c102d;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-bottom: 1px solid white;
+    letter-spacing: 3px;
+}
