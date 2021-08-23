@@ -27,3 +27,21 @@
     border-bottom: 1px solid white;
     letter-spacing: 3px;
 }
+
+.resultMusic {
+    width: 100%;
+    height: 629px;
+    overflow: scroll;
+}
+
+.resultMusic {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.resultMusic::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+.resultMusic .mediaDownload  {
+    width: 1000px !important;
+}

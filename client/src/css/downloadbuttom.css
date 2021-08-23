@@ -1,0 +1,7 @@
+.download {
+    position: relative;
+}
+.download  img {
+    position: absolute;
+    left: 100px;
+}
