@@ -5,9 +5,10 @@ import { faHome, faSearch, faChartLine } from '@fortawesome/free-solid-svg-icons
 
 import "../css/musicSearch.css";
 import DownloadButton from "./downloadButton";
+import MusicList from "./musicList";
 
 let MusicSearch = ()=>{
-    const [musicList, setMusicList] = useState(['1', '2', '3', '4']);
+    const [musicList, setMusicList] = useState([]);
     const [text, setText] = useState('');
 
     const onKeyPress=(e, value)=> {
@@ -15,13 +16,12 @@ let MusicSearch = ()=>{
             searchMusic();
         }
     }
-
     const searchMusic= (e)=> {
         
         var request=require('request');
         
         var optionParams={
-            q:"",
+            q:"ㅇㅇ",
             part:"snippet",
             key:"AIzaSyDXRkhYhznJVHsazwLBwPVz9pqR-u1zVRU",
             maxResults:2,
@@ -45,11 +45,15 @@ let MusicSearch = ()=>{
             setMusicList([]);
             //json형식을 서버로 부터 받음
             var data=JSON.parse(body).items;
+            let tempMusicList = [];
             for(var content in data){
                 //youtube downloader에 videoId 넘기면 됨.
                 // console.log(data[content].snippet.title+" : "+data[content].id.videoId);
-                musicList.push(data[content]);
+                tempMusicList.push(data[content]);
+                
             }
+            setMusicList([...tempMusicList]);
+            console.log(musicList[0]);
         });
         
     }
@@ -65,18 +69,7 @@ let MusicSearch = ()=>{
                 <input type="text" value={text} onChange={ChangeText} className="searchBar" onKeyPress={onKeyPress}></input>
             </div>
             <div className="resultMusic">
-                {
-                    musicList.map((data, idx) => {
-                        console.log(data);
-                        return data;
-                    })
-                }
-                {/* <DownloadButton id="UuV2BmJ1p_I" type="mp3" />
-                <DownloadButton id="UuV2BmJ1p_I" type="mp3" />
-                <DownloadButton id="UuV2BmJ1p_I" type="mp3" />
-                <DownloadButton id="UuV2BmJ1p_I" type="mp3" />
-                <DownloadButton id="UuV2BmJ1p_I" type="mp3" />
-                <DownloadButton id="UuV2BmJ1p_I" type="mp3" /> */}
+                {<MusicList music={musicList}></MusicList>}
             </div>
         </div>
     )
