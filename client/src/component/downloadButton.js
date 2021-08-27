@@ -4,10 +4,25 @@ function DownloadButton({ id, type, img }) {
 
 
   useEffect(()=> {
-    const iframe = document.getElementsByName("buttom-api-frame");
-    console.log(iframe);
+    const iFrame = document.getElementsByName("buttom-api-frame");
+    console.log(iFrame);
+
+    var cssLink = document.createElement("link");
+    cssLink.href = "iframeStyle.css"; 
+    cssLink.rel = "stylesheet"; 
+    cssLink.type = "text/css"; 
     
-    
+
+    for (var i = 0; i < iFrame.length; i++)
+    {
+      // iFrame[i].document.head.appendChild(cssLink);
+      console.log(iFrame[i].document);
+      iFrame[i].frameBorder="0";   //  For other browsers.
+      iFrame[i].setAttribute("frameBorder", "0");   //  For other browsers (just a backup for the above).
+      iFrame[i].contentWindow.document.body.style.border="none";   //  For IE.
+    }
+
+    // document.body.appendChild(iframe);
   }, [])
   
   return (
