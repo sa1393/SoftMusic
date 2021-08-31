@@ -53,7 +53,7 @@ let MusicSearch = ()=>{
                 
             }
             setMusicList([...tempMusicList]);
-            console.log(musicList[0]);
+            console.log(musicList);
         });
         
     }

@@ -11,13 +11,14 @@ const api = {
 let Home = ()=>{
     //await axios.get(api.key);
     return(
-        <div className="home">         
-            <span className="suggest-artist">Ed Sheeren</span>
+        <div className="home">
+            <h1>추천 음악</h1>        
+            <span className="suggest-artist"></span>
             <div className="home-container">
                 <div>
                     <div></div>
                 </div>
-                <span>Popular</span>
+                <span></span>
                 <div>
                     <div></div>
                     <div></div>
