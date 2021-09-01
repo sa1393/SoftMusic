@@ -9,6 +9,13 @@
     grid-template-columns: 200px 780px 300px;
 }
 
+.music-input {
+    width: 100px;
+    padding: 0px;
+    border: 0;
+    padding-right: 0;
+}
+
 .music_front_bar{
     background: rgb(89,93,169);
     background: linear-gradient(90deg, rgba(89,93,169,1) 0%, rgba(67,70,123,1) 17%, rgba(93,94,174,1) 43%, rgba(71,73,130,1) 69%, rgba(93,94,174,1) 100%);
@@ -44,10 +51,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    padding-top: 25px;
 }
 
 .music-user > span {
     color: white;
+    width: 100%;
+    height: 100%;
 }
 
 .music-user > span:nth-child(1){color: white; font-size: 1rem;}

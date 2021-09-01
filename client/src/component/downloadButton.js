@@ -1,12 +1,26 @@
 import React, { useEffect } from "react";
 import '../css/downloadbutton.css';
+function regExp(str){  
+  var reg = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi
+  //특수문자 검증
+  if(reg.test(str)){
+    //특수문자 제거후 리턴
+    return str.replace(reg, "");    
+  } else {
+    //특수문자가 없으므로 본래 문자 리턴
+    return str;
+  }  
+}
+
+
 
 function DownloadButton({ id, type, img, channelTitle, title }) {
-
-
+  let resultText =  regExp(title);
   useEffect(()=> {
     const iFrame = document.getElementsByName("buttom-api-frame");
     console.log(iFrame);
+
+
 
     for (var i = 0; i < iFrame.length; i++)
     {
@@ -25,7 +39,7 @@ function DownloadButton({ id, type, img, channelTitle, title }) {
         {/* <h3>{id}</h3> */}
         <img src={img} className="thumbnail"></img>
         <div className="texts">
-          <span>{title}</span>
+          <span>{resultText}</span>
           <span>{channelTitle}</span>
         </div>
         <iframe

@@ -15,6 +15,7 @@ const useAudio = (src)=> {
     const musicInput = useRef();
     const allSpan = useRef();
     const currentSpan = useRef();
+    
    
 
     useEffect(()=> {
@@ -91,8 +92,8 @@ let MusicBar = () => {
     const {play, setState, audio, musicInput, currentSpan, allSpan} = useAudio("music/music.mp3");
     const {soundInput} = useSound();
     const fileInput = useRef();
+    const [musicTitle, setMusicTitle] = useState("노래 제목");
 
-    let musicTitle = "노래 제목";
     function soundControl(){
         audio.current.volume = soundInput.current.value / 100;
     }
@@ -113,7 +114,7 @@ let MusicBar = () => {
         });
 
         reader.readAsDataURL(file);
-        musicTitle = file.name
+        setMusicTitle(file.name);
         console.log(file.name);
       
     }
@@ -130,14 +131,8 @@ let MusicBar = () => {
     return (
         <div className="music_front_bar">
             <div className="music-info">
-                <div className="music-img-space">
-                    <div className="music-img">
-
-                    </div>
-                </div>
                 <div className="music-user">
                     <span>{musicTitle}</span>
-                    <span>가수</span>
                 </div>
             </div>
             <div className="music-play-container">
@@ -170,8 +165,9 @@ let MusicBar = () => {
                         <input ref={soundInput} type="range" className="volume-slider" max="100" onChange={soundControl} ></input>
                     </div>
                     <VolumeUp className="icon" ></VolumeUp>
-                    <input ref={fileInput} type = "file" name="file" accept = ".mp3" onChange={temp} /> <br/>
+                    <br/>
                 </div>
+                <div><input className= "music-input" ref={fileInput} type = "file" name="file" accept = ".mp3" onChange={temp} /> </div>
             </div>
         </div>
         

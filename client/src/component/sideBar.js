@@ -38,10 +38,10 @@ let SideBar = ()=>{
 
             </ul>
 
-            <ul className="playList">
+            {/* <ul className="playList">
                 <Button className="playList-btn" variant="contained" color="secondary">NEW PLAYLIST</Button>
                 <li></li>
-            </ul>
+            </ul> */}
         </div>
     )
 }

@@ -9,7 +9,7 @@ let api2 = "AIzaSyDXRkhYhznJVHsazwLBwPVz9pqR-u1zVRU";
 let api3 = "AIzaSyBr-ZHAPTFEJFcCZn2s9fY1OA9jmAGIDF0";
 let api4 = "AIzaSyCaMFv45HM8saJFfpp9LkpcscbcFxQfHJE";
 let api5 = "AIzaSyDqVFD5c-fQP2Lyd5dGSHWGuVpRtS96BKM";
-let api6 = "AIzaSyB_OXIWUx1EOsDRAMTbxxCHW5GSk6ZQONE"
+let api6 = "AIzaSyB_OXIWUx1EOsDRAMTbxxCHW5GSk6ZQONE";
 
 let MusicCharts = ()=>{
     let [musicListArr, setMusicListArr] = useState([]);
@@ -35,7 +35,7 @@ let MusicCharts = ()=>{
         var optionParams={
             q:"신호등",
             part:"snippet",
-            key:api5,
+            key:api6,
             maxResults:1,
             type:"video",
             regionCode:"KR",
@@ -83,7 +83,7 @@ let MusicCharts = ()=>{
 
     return(
         <div className="charts">
-            <h1>
+            <h1 className="sub-title">
                 Charts
             </h1>
             {loading ? <h1>로딩중</h1> : <MusicList music={musicListArr}></MusicList>}

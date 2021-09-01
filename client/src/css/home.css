@@ -2,6 +2,18 @@
       
 }
 
+.sub-title {
+    padding: 35px;
+    padding-bottom: 0;
+
+}
+
+.home > h2 {
+    padding: 35px;
+    padding-top: 0;
+    padding-bottom: 1;
+}
+
 .home-container{
     width: 700px;
     margin: 0 auto;
