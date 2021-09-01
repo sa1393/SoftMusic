@@ -15,6 +15,7 @@ const useAudio = (src)=> {
     const musicInput = useRef();
     const allSpan = useRef();
     const currentSpan = useRef();
+   
 
     useEffect(()=> {
         if(audio.current.src !== null){
@@ -30,6 +31,7 @@ const useAudio = (src)=> {
         setInterval(setTimeCurrent, 1000);
         setTimeout(setTimeDuration, 100);
 
+        console.log("changeSrc")
         return (clearInterval(updateInput));
 
     },[src]);
@@ -88,7 +90,9 @@ const useSound = ()=>{
 let MusicBar = () => {
     const {play, setState, audio, musicInput, currentSpan, allSpan} = useAudio("music/music.mp3");
     const {soundInput} = useSound();
+    const fileInput = useRef();
 
+    let musicTitle = "노래 제목";
     function soundControl(){
         audio.current.volume = soundInput.current.value / 100;
     }
@@ -98,7 +102,20 @@ let MusicBar = () => {
     }
 
     function temp(e) {
-        console.log(e);
+        
+        // setState({src: fileInput.current.files[0].name})
+        const file = fileInput.current.files[0];
+        const reader = new FileReader();
+        reader.addEventListener('load', result => {
+            const data = result.currentTarget.result;
+            audio.current.src = data;
+            // audio.current.play();
+        });
+
+        reader.readAsDataURL(file);
+        musicTitle = file.name
+        console.log(file.name);
+      
     }
 
 
@@ -119,7 +136,7 @@ let MusicBar = () => {
                     </div>
                 </div>
                 <div className="music-user">
-                    <span>노래 제목</span>
+                    <span>{musicTitle}</span>
                     <span>가수</span>
                 </div>
             </div>
@@ -153,7 +170,7 @@ let MusicBar = () => {
                         <input ref={soundInput} type="range" className="volume-slider" max="100" onChange={soundControl} ></input>
                     </div>
                     <VolumeUp className="icon" ></VolumeUp>
-                    <input type = "file" name="file" accept = ".mp3" onChange={temp}/> <br/>
+                    <input ref={fileInput} type = "file" name="file" accept = ".mp3" onChange={temp} /> <br/>
                 </div>
             </div>
         </div>
