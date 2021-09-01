@@ -84,6 +84,7 @@ const useSound = ()=>{
     return {soundInput};
 }
 
+
 let MusicBar = () => {
     const {play, setState, audio, musicInput, currentSpan, allSpan} = useAudio("music/music.mp3");
     const {soundInput} = useSound();
@@ -96,7 +97,18 @@ let MusicBar = () => {
         audio.current.currentTime = musicInput.current.value * audio.current.duration / 10000;
     }
 
+    function temp(e) {
+        console.log(e);
+    }
+
+
+    const onChange = (e) => {
+        
+    }
+
     const fadeSound = useFade(0.2, 0);
+
+    
 
     return (
         <div className="music_front_bar">
@@ -141,7 +153,7 @@ let MusicBar = () => {
                         <input ref={soundInput} type="range" className="volume-slider" max="100" onChange={soundControl} ></input>
                     </div>
                     <VolumeUp className="icon" ></VolumeUp>
-
+                    <input type = "file" name="file" accept = ".mp3" onChange={temp}/> <br/>
                 </div>
             </div>
         </div>

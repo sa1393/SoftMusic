@@ -7,7 +7,9 @@ let MusicList = ({music})=>{
 
     return(
         <div> 
+            {console.log("test")}
             {
+                
                 music.map(music => (
                     <DownloadButton id={music.id.videoId} type="mp3" img={music.snippet.thumbnails.default.url} channelTitle={music.snippet.channelTitle} title={music.snippet.title}/>
                 ))

@@ -10,23 +10,27 @@ const api = {
 
 let Home = ()=>{
     //await axios.get(api.key);
+    let musicList 
+    
+
     return(
         <div className="home">
-            <h1>추천 음악</h1>        
+            <h1>추천하는 음악</h1>        
             <span className="suggest-artist"></span>
             <div className="home-container">
-                <div>
-                    <div></div>
-                </div>
-                <span></span>
-                <div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                {
+                    
+                }
             </div>
             
+        </div>
+    )
+}
+
+let HomeHorizontal = () => {
+    return (
+        <div>
+
         </div>
     )
 }

@@ -7,6 +7,13 @@ import "../css/musicSearch.css";
 import DownloadButton from "./downloadButton";
 import MusicList from "./musicList";
 
+let api = "AIzaSyCFYSD6tJOcz2YoB45nP7qZYKpTmD0YiE4";
+let api2 = "AIzaSyDXRkhYhznJVHsazwLBwPVz9pqR-u1zVRU";
+let api3 = "AIzaSyBr-ZHAPTFEJFcCZn2s9fY1OA9jmAGIDF0";
+let api4 = "AIzaSyCaMFv45HM8saJFfpp9LkpcscbcFxQfHJE";
+let api5 = "AIzaSyDqVFD5c-fQP2Lyd5dGSHWGuVpRtS96BKM";
+
+
 let MusicSearch = ()=>{
     const [musicList, setMusicList] = useState([]);
     const [text, setText] = useState('');
@@ -23,7 +30,7 @@ let MusicSearch = ()=>{
         var optionParams={
             q:"ㅇㅇ",
             part:"snippet",
-            key:"AIzaSyDXRkhYhznJVHsazwLBwPVz9pqR-u1zVRU",
+            key:api5,
             maxResults:2,
             type:"video",
             regionCode:"KR",
