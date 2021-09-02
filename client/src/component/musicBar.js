@@ -118,16 +118,7 @@ let MusicBar = () => {
         console.log(file.name);
       
     }
-
-
-    const onChange = (e) => {
-        
-    }
-
     const fadeSound = useFade(0.2, 0);
-
-    
-
     return (
         <div className="music_front_bar">
             <div className="music-info">

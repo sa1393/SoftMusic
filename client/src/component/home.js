@@ -25,13 +25,13 @@ let Home = ()=>{
         singString.push("justin bieber");
         singString.push("아이유");
         singString.push("악동뮤지션");
-        // singString.push("");
-        // singString.push("");
-        // singString.push("");
-        // singString.push("");
-        // singString.push("");
-        // singString.push("");
-        // singString.push("");
+        singString.push("태연");
+        singString.push("방탄소년단");
+        singString.push("이무진");
+        singString.push("디핵");
+        singString.push("헤이즈");
+        singString.push("멜로망스");
+        singString.push("ed sheeran");
         // singString.push("");
         // singString.push("");
         // singString.push("");
@@ -53,7 +53,7 @@ let Home = ()=>{
         var optionParams={
             q:"신호등",
             part:"snippet",
-            key:api6,
+            key:api,
             maxResults:5,
             type:"video",
             regionCode:"KR",

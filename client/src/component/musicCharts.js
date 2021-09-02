@@ -17,15 +17,17 @@ let MusicCharts = ()=>{
     let temp = [];
     
     useEffect(()=> {
-        chartSearchMusic("신호등", false);
         chartSearchMusic("STAY" , false);
-        chartSearchMusic("바라만 본다", false);
-        chartSearchMusic("Next Level", true);
-        // chartSearchMusic("Permission to Dance");
-        // chartSearchMusic("낙하 (with 아이유");
-        // chartSearchMusic("Weekend");
-        // chartSearchMusic("Butter");
-        // chartSearchMusic("OHAYO MY NIGHT");
+        chartSearchMusic("신호등 이무진", false);
+        chartSearchMusic("바라만 본다 MSG워너비(M.O.M)", false);
+        chartSearchMusic("Next Level aespa", true);
+        chartSearchMusic("Queendom Red Velvet (레드벨벳)");
+        chartSearchMusic("낙하 (with 아이유) AKMU (악뮤)");
+        chartSearchMusic("Permission to Dance 방탄소년단");
+        chartSearchMusic("Weekend 태연 (TAEYEON)");
+        chartSearchMusic("OHAYO MY NIGHT 디핵 (D-Hack), PATEKO (파테코)");
+        chartSearchMusic("디핵 (D-Hack), PATEKO (파테코)d");
+        chartSearchMusic("DUMB DUMB 전소미");
     }, [])
 
     const chartSearchMusic= (text, last)=> {
@@ -35,7 +37,7 @@ let MusicCharts = ()=>{
         var optionParams={
             q:"신호등",
             part:"snippet",
-            key:api6,
+            key:api2,
             maxResults:1,
             type:"video",
             regionCode:"KR",
@@ -86,7 +88,9 @@ let MusicCharts = ()=>{
             <h1 className="sub-title">
                 Charts
             </h1>
+            <div className="resultMusic">
             {loading ? <h1>로딩중</h1> : <MusicList music={musicListArr}></MusicList>}
+            </div>
 
         </div>
     )
