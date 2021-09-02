@@ -13,6 +13,7 @@ let api3 = "AIzaSyBr-ZHAPTFEJFcCZn2s9fY1OA9jmAGIDF0";
 let api4 = "AIzaSyCaMFv45HM8saJFfpp9LkpcscbcFxQfHJE";
 let api5 = "AIzaSyDqVFD5c-fQP2Lyd5dGSHWGuVpRtS96BKM";
 let api6 = "AIzaSyB_OXIWUx1EOsDRAMTbxxCHW5GSk6ZQONE";
+let api7 = "AIzaSyBGV5rxcrndSVBOuFkTuVKpKWc3Uu_Cjfs";
 
 let MusicSearch = ()=>{
     const [musicList, setMusicList] = useState([]);
@@ -30,7 +31,7 @@ let MusicSearch = ()=>{
         var optionParams={
             q:"ㅇㅇ",
             part:"snippet",
-            key:api3,
+            key:api7,
             maxResults:8,
             type:"video",
             regionCode:"KR",
